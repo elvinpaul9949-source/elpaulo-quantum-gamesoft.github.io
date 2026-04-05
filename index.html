@@ -1,0 +1,77 @@
+import React from "react";
+import { motion } from "framer-motion";
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-black text-white font-sans">
+      {/* Hero Section */}
+      <section className="flex flex-col items-center justify-center h-screen text-center px-6">
+        <motion.h1
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent"
+        >
+          EL-PAULO QUANTUM
+        </motion.h1>
+
+        <p className="mt-6 text-lg md:text-xl max-w-2xl text-gray-300">
+          Building next-generation games and software powered by innovation,
+          creativity, and futuristic technology.
+        </p>
+
+        <button className="mt-8 px-6 py-3 rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 hover:scale-105 transition">
+          Explore Projects
+        </button>
+      </section>
+
+      {/* About Section */}
+      <section className="py-20 px-6 bg-gray-900 text-center">
+        <h2 className="text-3xl font-semibold mb-6">About Us</h2>
+        <p className="max-w-3xl mx-auto text-gray-400">
+          EL-PAULO QUANTUM GAMESOFT is focused on creating advanced digital
+          experiences, including games, applications, and innovative software
+          solutions designed for the future.
+        </p>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 px-6 text-center">
+        <h2 className="text-3xl font-semibold mb-10">Our Services</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          {[
+            "Game Development",
+            "Software Engineering",
+            "Future Tech Solutions",
+          ].map((service, index) => (
+            <div
+              key={index}
+              className="p-6 rounded-2xl bg-gray-800 hover:scale-105 transition"
+            >
+              <h3 className="text-xl font-bold mb-2">{service}</h3>
+              <p className="text-gray-400">
+                Delivering high-quality, scalable, and innovative solutions.
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-20 px-6 bg-gray-900 text-center">
+        <h2 className="text-3xl font-semibold mb-6">Contact Us</h2>
+        <p className="text-gray-400 mb-6">
+          Ready to build the future with us? Reach out today.
+        </p>
+        <button className="px-6 py-3 rounded-2xl bg-purple-600 hover:bg-purple-700">
+          Contact
+        </button>
+      </section>
+
+      {/* Footer */}
+      <footer className="text-center py-6 text-gray-500">
+        © {new Date().getFullYear()} EL-PAULO QUANTUM GAMESOFT. All rights reserved.
+      </footer>
+    </div>
+  );
+}
